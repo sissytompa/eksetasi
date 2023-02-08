@@ -1,0 +1,44 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class StringTransformTest {
+  @Test
+  public void testTransformStringWithNormalInput() {
+    String input = "eksetasi mathimatos";
+    String expected = "Eksetasi Mathimatos";
+    String actual = StringTransform.transformString(input);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testTransformStringWithMixedCaseInput() {
+    String input = "EkseTasi MaThimatos";
+    String expected = "Eksetasi Mathimatos";
+    String actual = StringTransform.transformString(input);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testTransformStringWithEmptyInput() {
+    String input = "";
+    String expected = "";
+    String actual = StringTransform.transformString(input);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testTransformStringWithOneWordInput() {
+    String input = "mathimatos";
+    String expected = "Mathimatos";
+    String actual = StringTransform.transformString(input);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testTransformStringWithMultipleSpaces() {
+    String input = "  eksetasi mathimatos  ";
+    String expected = "Eksetasi Mathimatos";
+    String actual = StringTransform.transformString(input);
+    assertEquals(expected, actual);
+  }
+}
